@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full glass-effect transition-smooth md:backdrop-blur-md ",
+        "sticky top-0 z-50 w-full glass-effect transition-smooth md:backdrop-blur-md border-b border-b-neutral-500/20",
         className
       )}
     >
