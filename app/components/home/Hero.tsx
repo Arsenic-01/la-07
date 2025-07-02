@@ -45,7 +45,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="py-10 2xl:py-24 xl:px-5 relative overflow-hidden bg-white">
+    <section className="py-12 2xl:py-24 xl:px-5 relative overflow-hidden bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 2xl:items-start">
           {/* Left Side - Hero Content */}
