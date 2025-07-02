@@ -1,3 +1,4 @@
+import Footer from "./components/core/Footer";
 import CallToAction from "./components/home/CallToAction";
 import Faqs from "./components/home/Faqs";
 import Hero from "./components/home/Hero";
@@ -10,6 +11,7 @@ export default function Home() {
       <Introduction />
       <Faqs />
       <CallToAction />
+      <Footer/>
     </div>
   );
 }

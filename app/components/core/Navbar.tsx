@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full glass-effect transition-smooth md:backdrop-blur-md border-b border-b-neutral-500/20",
+        "sticky top-0 z-50 w-full glass-effect transition-smooth md:backdrop-blur-3xl border-b border-b-neutral-500/20",
         className
       )}
     >
@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <div className="flex items-center gap-2">
           <Link
             href="/"
-            className="inline-flex gap-2 items-center justify-center text-lg sm:text-xl font-bold tracking-tight transition-smooth hover:opacity-90"
+            className="inline-flex gap-2 items-center justify-center text-lg sm:text-xl font-medium tracking-tight transition-smooth hover:opacity-90"
           >
             <TruckElectric className="size-8 fill-blue-400 text-blue-300" />
             <span>Exovia Exports</span>

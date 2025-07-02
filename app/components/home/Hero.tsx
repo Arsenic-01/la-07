@@ -22,13 +22,13 @@ const Hero = () => {
       src: "/assets/hero/hero_icon_cloud/corn.jpg",
       alt: "Premium frozen corn",
       title: "Frozen Corn",
-      height: "h-64",
+      height: "h-56",
     },
     {
       src: "/assets/hero/hero_icon_cloud/vegetables.jpg",
       alt: "Fresh frozen peas",
       title: "Vegetables",
-      height: "h-52",
+      height: "h-48",
     },
     {
       src: "/assets/hero/hero_icon_cloud/mix_fruits.jpg",
@@ -45,9 +45,9 @@ const Hero = () => {
   ];
 
   return (
-    <section className="py-10 lg:py-24 relative overflow-hidden bg-white">
+    <section className="py-10 2xl:py-24 xl:px-5 relative overflow-hidden bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 2xl:items-start">
           {/* Left Side - Hero Content */}
           <div className="order-2 lg:order-1">
             <SectionTitle
@@ -60,14 +60,14 @@ const Hero = () => {
                 className="lg:hidden"
               />
             </div>
-            <h1 className="text-4xl tracking-tight md:text-5xl xl:text-6xl font-bold text-black text-center lg:text-left mb-6">
+            <h1 className="text-4xl tracking-tight xl:text-5xl 2xl:text-6xl font-bold text-black text-center lg:text-left mb-4 xl:mb-6">
               Your Gateway to
-              <span className="block mt-2 bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-transparent">
                 Premium Frozen Foods
               </span>
             </h1>
 
-            <p className="text-lg mx-auto lg:mx-0 text-center lg:text-left max-w-xl text-neutral-600 leading-relaxed font-light mb-10">
+            <p className="text-base mx-auto lg:mx-0 text-center lg:text-left max-w-xl text-neutral-600 leading-relaxed font-light mb-8">
               We import the highest quality frozen foods from trusted global
               suppliers, delivering premium freshness and exceptional quality to
               your business.
@@ -75,7 +75,6 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 mb-12">
               <Button
-                size="lg"
                 variant="outline"
                 className="px-8 py-3 border-gray-300 hover:bg-gray-50 transition-colors bg-transparent"
               >
@@ -84,10 +83,7 @@ const Hero = () => {
                   Visit Our Facility
                 </span>
               </Button>
-              <Button
-                size="lg"
-                className="px-8 py-3 bg-gray-900 hover:bg-gray-800 transition-colors"
-              >
+              <Button className="px-8 py-3 bg-gray-900 hover:bg-gray-800 transition-colors">
                 <span className="flex items-center gap-2">
                   <Phone size={18} />
                   Request Quote

@@ -55,11 +55,11 @@ const items = [
 
 export default function Faqs() {
   return (
-    <div className="max-w-4xl mx-auto py-24">
+    <div className="max-w-3xl xl:max-w-4xl mx-auto py-24">
       <div className="flex justify-center mt-5">
         <SectionTitle title="FAQs" />
       </div>
-      <h2 className="text-4xl md:text-5xl xl:text-6xl font-medium text-center max-w-xl mx-auto">
+      <h2 className="text-4xl md:text-5xl 2xl:text-6xl font-medium text-center max-w-xl mx-auto">
         Questions? We&apos;ve got <span className="text-blue-600">answers</span>
       </h2>
       <Accordion
@@ -74,7 +74,7 @@ export default function Faqs() {
             className="bg-background has-focus-visible:border-ring has-focus-visible:ring-ring/50 rounded-md border px-4 py-1 outline-none last:border-b has-focus-visible:ring-[3px]"
           >
             <AccordionPrimitive.Header className="flex">
-              <AccordionPrimitive.Trigger className="hover:cursor-pointer focus-visible:ring-0 sm:px-2 flex flex-1 items-center justify-between rounded-md py-3 text-left sm:text-lg leading-6 font-semibold transition-all outline-none [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0">
+              <AccordionPrimitive.Trigger className="hover:cursor-pointer focus-visible:ring-0 sm:px-2 flex flex-1 items-center justify-between rounded-md py-3 text-left 2xl:text-lg leading-6 font-semibold transition-all outline-none [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0">
                 {item.title}
                 <PlusIcon
                   size={16}

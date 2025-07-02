@@ -24,12 +24,12 @@ const Introduction = () => {
   }, [wordIndex]);
   return (
     <div className="py-24 lg:py-40">
-      <div className="container flex flex-col items-center justify-center mx-auto max-w-7xl">
-        <div className="sticky top-28 md:top-40 lg:top-52">
+      <div className="container flex flex-col items-center justify-center mx-auto max-w-5xl 2xl:max-w-7xl">
+        <div className="sticky top-28 md:top-32 2xl:top-52">
           <div className="flex items-center">
             <SectionTitle title="Introducing Exovia Exports" divElement />
           </div>
-          <div className="text-4xl md:text-5xl xl:text-6xl text-center font-medium sm:mt-5">
+          <div className="text-4xl md:text-5xl 2xl:text-6xl text-center font-medium sm:mt-5">
             <span>
               Buying quality frozen foods shouldn&apos;t be complicated.
             </span>{" "}

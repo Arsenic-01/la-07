@@ -1,50 +1,68 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { AnimationPlaybackControls, motion, useAnimate } from "framer-motion";
+import React, { useState } from "react";
 
 const CallToAction = () => {
-  const [scope, animate] = useAnimate();
   const [isHovered, setHovered] = useState(false);
-  const animation = useRef<AnimationPlaybackControls>(null);
 
-  useEffect(() => {
-    animation.current = animate(
-      scope.current,
-      { x: "-50%" },
-      { duration: 30, ease: "linear", repeat: Infinity }
-    );
-  });
-
-  useEffect(() => {
-    if (animation.current) {
-      if (isHovered) {
-        animation.current.speed = 0.5;
-      } else {
-        animation.current.speed = 1;
-      }
-    }
-  }, [isHovered]);
+  const content = (
+    <div className="flex items-center gap-16 pr-16 text-5xl lg:text-6xl xl:text-7xl font-medium group cursor-pointer">
+      <span className="text-blue-500 text-7xl">&#10038;</span>
+      <span className="group-hover:text-blue-500 transition duration-150 ease-in-out">
+        Try it now
+      </span>
+    </div>
+  );
 
   return (
-    <section className="py-24 mx-auto">
-      <div className="overflow-x-clip p-4 flex">
-        <motion.div
-          ref={scope}
-          className="flex flex-none pr-16 gap-16 text-5xl lg:text-6xl xl:text-7xl font-medium group cursor-pointer"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-        >
-          {Array.from({ length: 10 }).map((_, index) => (
-            <div className="flex items-center gap-16" key={index}>
-              <span className="text-blue-500 text-7xl">&#10038;</span>
-              <span className="group-hover:text-blue-500 transition duration-150 ease-in-out">
-                Try it now
-              </span>
+    <section className="py-24 overflow-hidden relative">
+      <div
+        className={`marquee-container ${isHovered ? "paused" : ""}`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <div className="marquee-content">
+          {/* Repeat content twice for seamless scroll */}
+          {Array.from({ length: 2 }).map((_, outerIndex) => (
+            <div className="marquee-segment" key={outerIndex}>
+              {Array.from({ length: 10 }).map((_, index) => (
+                <React.Fragment key={`${outerIndex}-${index}`}>
+                  {content}
+                </React.Fragment>
+              ))}
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
+
+      <style jsx>{`
+        .marquee-container {
+          overflow: hidden;
+        }
+
+        .marquee-content {
+          display: flex;
+          width: max-content;
+          animation: scroll-left 30s linear infinite;
+        }
+
+        .paused .marquee-content {
+          animation-play-state: paused;
+        }
+
+        .marquee-segment {
+          display: flex;
+        }
+
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 };
