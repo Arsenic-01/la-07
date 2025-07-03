@@ -17,6 +17,21 @@ const Hero = () => {
     "Loblaws",
   ];
 
+  const getHeightFromClass = (heightClass: string) => {
+    const mapping: Record<string, number> = {
+      "h-44": 176,
+      "h-48": 192,
+      "h-52": 208,
+      "h-56": 224,
+      // add more if needed
+    };
+    const classes = heightClass.split(" ");
+    for (const c of classes) {
+      if (mapping[c]) return mapping[c];
+    }
+    return 200; // default fallback
+  };
+
   const productImages = [
     {
       src: "/assets/hero/hero_icon_cloud/corn.jpg",
@@ -117,13 +132,24 @@ const Hero = () => {
                   className="break-inside-avoid mb-4 group cursor-pointer"
                 >
                   <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-[1.02]">
-                    <Image
+                    {/* <Image
                       src={image.src || "/placeholder.svg"}
                       alt={image.alt}
                       width={500}
                       height={500}
                       className={`w-full ${image.height} object-cover select-none`}
+                    /> */}
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={300} // fixed width for layout stability
+                      height={getHeightFromClass(image.height)} // custom helper to extract numeric value
+                      className={`w-full ${image.height} object-cover select-none rounded-2xl`}
+                      priority // optional: preload in hero section
+                      loading="eager"
+                      quality={100}
                     />
+
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                       <h3 className="text-white select-none font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
