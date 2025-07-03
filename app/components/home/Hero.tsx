@@ -28,19 +28,19 @@ const Hero = () => {
       src: "/assets/hero/hero_icon_cloud/vegetables.jpg",
       alt: "Fresh frozen peas",
       title: "Vegetables",
-      height: "h-48",
+      height: "h-48 2xl:h-52",
     },
     {
       src: "/assets/hero/hero_icon_cloud/mix_fruits.jpg",
       alt: "Frozen fruit mix",
       title: "Fruit Mix",
-      height: "h-44",
+      height: "h-44 2xl:h-48",
     },
     {
       src: "/assets/hero/hero_icon_cloud/blackraisins.webp",
       alt: "Fresh frozen berries",
       title: "Frozen Raisins",
-      height: "h-48",
+      height: "h-48 2xl:h-52",
     },
   ];
 
@@ -140,7 +140,7 @@ const Hero = () => {
 
       {/* Client Logos */}
 
-      <div className="mt-12 py-12 border-t border-gray-100">
+      <div className="mt-12 2xl:mt-16 py-12 border-t border-gray-100">
         <div className="container mx-auto px-4">
           <p className="text-center text-gray-500 font-medium mb-8 text-sm uppercase tracking-wide">
             Trusted by Leading Retailers Worldwide

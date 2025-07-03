@@ -9,7 +9,7 @@ const CallToAction = () => {
     <div className="flex items-center gap-16 pr-16 text-5xl lg:text-6xl xl:text-7xl font-medium group cursor-pointer">
       <span className="text-blue-500 text-7xl">&#10038;</span>
       <span className="group-hover:text-blue-500 transition duration-150 ease-in-out">
-        Try it now
+        Try it <span className="italic font-normal">now</span>
       </span>
     </div>
   );
